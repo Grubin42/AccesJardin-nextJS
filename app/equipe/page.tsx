@@ -1,6 +1,40 @@
+"use client";
 /**
- * Composant de la page Équipe.
+ * Composant de la page Équipe avec 4 cartes réparties en 2 colonnes
  */
+import SketchyBorder from '../components/SketchyBorder';
+
 export default function EquipePage() {
-    return <h1>Notre équipe</h1>;
-  }
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      {/* Carte 1 */}
+      <SketchyBorder>
+        <div className="p-4 ">
+          <h1 className="text-xl font-bold mb-2">Carte 1</h1>
+          <p>Description de la carte 1.</p>
+        </div>
+      </SketchyBorder>
+      {/* Carte 2 */}
+      <SketchyBorder>
+        <div className="p-4 ">
+          <h1 className="text-xl font-bold mb-2">Carte 2</h1>
+          <p>Description de la carte 2.</p>
+        </div>
+      </SketchyBorder>
+      {/* Carte 3 */}
+      <SketchyBorder>
+        <div className="p-4 ">
+          <h1 className="text-xl font-bold mb-2">Carte 3</h1>
+          <p>Description de la carte 3.</p>
+        </div>
+      </SketchyBorder>
+      {/* Carte 4 */}
+      <SketchyBorder>
+        <div className="p-4 ">
+          <h1 className="text-xl font-bold mb-2">Carte 4</h1>
+          <p>Description de la carte 4.</p>
+        </div>
+      </SketchyBorder>
+    </div>
+  );
+}

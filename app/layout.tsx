@@ -1,32 +1,21 @@
 /**
  * Composant de layout global avec une Navbar.
  */
-import Link from 'next/link';
+import './globals.css';
+import NavBar from './components/NavBar';
+import { Patrick_Hand } from 'next/font/google';
+
+const patrickHand = Patrick_Hand({ subsets: ['latin'], weight: '400' });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <head>
-        <title>Mon Site Next.js</title>
+        <title>Accès jardin</title>
       </head>
-      <body>
-        <nav>
-          <ul>
-            <li>
-              <Link href="/">Accueil</Link>
-            </li>
-            <li>
-              <Link href="/equipe">Équipe</Link>
-            </li>
-            <li>
-              <Link href="/service">Service</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-        <main>{children}</main>
+      <body className={patrickHand.className}>
+        <NavBar />
+        <main className='p-4'>{children}</main>
       </body>
     </html>
   );
