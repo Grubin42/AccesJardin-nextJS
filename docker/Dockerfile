@@ -7,18 +7,18 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copier les fichiers de configuration et installer les dépendances
-COPY package*.json ./
+COPY ../package*.json ./
 RUN npm install && npm install -g serve
 
 # Copier l'intégralité du code de l'application
 COPY . .
 
 # Copier le script d'entrée et le rendre exécutable
-COPY entrypoint.sh /app/entrypoint.sh
+COPY docker/entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
 # Exposer le port de l'application
 EXPOSE 3000
 
 # Lancer le script d'entrée
-CMD ["/app/entrypoint.sh"]
+CMD ["/bin/sh", "/app/entrypoint.sh"]

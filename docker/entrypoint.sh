@@ -1,7 +1,5 @@
 #!/bin/sh
 # entrypoint.sh
-# Ce script démarre l'application en fonction du mode (développement ou production)
-
 if [ "$MODE" = "development" ]; then
   echo "Mode développement : démarrage avec hot reload..."
   npm run dev

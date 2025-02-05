@@ -1,22 +1,23 @@
-version: '3.8'
-
 services:
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ..
+      dockerfile: docker/Dockerfile
     environment:
       - MODE=development
     volumes:
-      - .:/app
+      - ../:/app
+      - ../docker/entrypoint.sh:/app/entrypoint.sh:ro
       - /app/node_modules
     ports:
       - "3000:3000"
+    networks:
+      - app_net
 
   caddy:
     image: caddy:latest
     volumes:
-      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - ../caddy/caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
     ports:
@@ -24,7 +25,13 @@ services:
       - "443:443"
     depends_on:
       - app
+    networks:
+      - app_net
 
 volumes:
   caddy_data:
   caddy_config:
+
+networks:
+  app_net:
+    driver: bridge

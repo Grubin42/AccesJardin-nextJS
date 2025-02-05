@@ -1,0 +1,11 @@
+/**
+ * Styles pour la page Service
+ */
+ .container {
+    padding: 2rem;
+    background-color: #f5f5f5;
+  }
+  
+  .title {
+    color: #333;
+  }
