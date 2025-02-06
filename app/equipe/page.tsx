@@ -1,8 +1,9 @@
 "use client";
-/**
- * Composant de la page Équipe avec 4 cartes réparties en 2 colonnes
- */
-import SketchyBorder from '../components/SketchyBorder';
+import dynamic from "next/dynamic";
+
+const SketchyBorder = dynamic(() => import("../components/SketchyBorder"), {
+  ssr: false,
+});
 
 export default function EquipePage() {
   return (
