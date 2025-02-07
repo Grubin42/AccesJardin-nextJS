@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import SketchyBorder from "./SketchyBorder";
 import HamburgerIcon from "./HamburgerIcon";
+import CloseIcon from "./CloseIcon";
 import SketchyButton from "./SketchyButton";
 
 export default function Sidebar() {
@@ -10,14 +11,12 @@ export default function Sidebar() {
 
   return (
     <div className="relative">
-      {/* Bouton de toggle positionné à droite */}
+      {/* Bouton de toggle positionné en haut à droite, avec décalage conditionnel */}
       <button
-        className={`p-2 text-black rounded transition-all duration-300 ${
-          open ? "mr-64" : ""
-        } fixed top-2 right-2 z-50`}
+        className={`p-2 text-black rounded transition-all duration-300 fixed top-2 right-2 z-50 ${open ? "mr-64" : ""}`}
         onClick={() => setOpen(!open)}
       >
-        <HamburgerIcon />
+        {open ? <CloseIcon /> : <HamburgerIcon />}
       </button>
 
       {/* Overlay qui ferme la sidebar au clic */}

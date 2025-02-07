@@ -1,33 +1,40 @@
-/**
- * Composant de layout global avec une Navbar.
- */
+"use client";
 import './globals.css';
 import SideBar from './components/SideBar';
 import Footer from "./components/Footer";
-import Link from 'next/link';
-import Image from 'next/image';
+import AnimatedLogo from "./components/AnimatedLogo";
+import React, { useState, useEffect } from "react";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const [overlayVisible, setOverlayVisible] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOverlayVisible(false);
+    }, 2000); // durée de l'animation de l'overlay
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <html lang="fr">
       <head>
         <title>Accès jardin</title>
       </head>
-      <body className="flex flex-col min-h-screen">
-        <header className="p-4">
-            <Link href="/" className="block">
-              <Image
-                src="/logo.png"
-                alt="Logo Accès jardin"
-                width={160}  // ajuste la largeur selon tes besoins
-                height={160}  // ajuste la hauteur selon tes besoins
-                className="object-contain mb-10"
-                />
-            </Link>
-          </header>
+      <body className="flex flex-col min-h-screen relative">
+        <AnimatedLogo />
         <SideBar />
-        <main className='p-4 flex-1'>{children}</main>
+        <main className="p-4 flex justify-center flex-1 mt-28 relative">
+          {children}
+        </main>
         <Footer />
+        {/* Overlay qui couvre uniquement le <main> et qui disparaît progressivement */}
+        <div
+          className={`absolute inset-0 z-20 pointer-events-none transition-opacity ease-in-out ${overlayVisible ? "opacity-100" : "opacity-0"}`}
+          style={{
+            transitionDuration: "2500ms",
+            background: "linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 66%, rgba(255,255,255,0) 100%)"
+          }}
+        />
       </body>
     </html>
   );
