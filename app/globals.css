@@ -38,8 +38,9 @@ body {
 
 /* Une fois animé, on place le logo en haut à gauche et on le réduit */
 .animate-logo {
-  top: -3%;
-  left: -4%;
+  top: 0.8rem;           /* distance fixe depuis le haut */
+  left: 0.8rem;
+  transform-origin: top left;
   transform: translate(0, 0) scale(0.53);
 }
 
@@ -52,8 +53,8 @@ body {
     z-index: 30;
   }
   .animate-logo {
-    top: -11%;
-    left: -32%;
+    top: 0.8rem;           /* distance fixe depuis le haut */
+    left: 0.8rem;
     transform: translate(0, 0) scale(0.3);
   }
 }
@@ -66,8 +67,8 @@ body {
     transform: translate(-50%, -50%) scale(1.4);
   }
   .animate-logo {
-    top: -4%;
-    left: -7%;
+    top: 0.8rem;           /* distance fixe depuis le haut */
+    left: 0.8rem;
     transform: translate(0, 0) scale(0.55);
   }
 }

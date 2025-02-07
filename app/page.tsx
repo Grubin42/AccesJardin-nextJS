@@ -22,7 +22,7 @@ export default function Home() {
       {/* Section des cartes */}
       <section className="grid gap-8 grid-cols-1 mt-20 md:grid-cols-2 lg:grid-cols-4">
         <CardHome 
-          title="Service" 
+          title="Services" 
           description="Découvrez nos prestations de jardinage naturel." 
           link="/service"
           backgroundImage="/fond_aquarelle1.png"
@@ -36,7 +36,7 @@ export default function Home() {
           flowerImage="/fleur2.png"
         />
         <CardHome 
-          title="Partenariat" 
+          title="Partenariats" 
           description="Nos collaborations pour un jardinage durable." 
           link="/partenariat"
           backgroundImage="/fond_aquarelle3.png"
