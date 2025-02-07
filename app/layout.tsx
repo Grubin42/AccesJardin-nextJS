@@ -3,6 +3,7 @@ import './globals.css';
 import SideBar from './components/SideBar';
 import Footer from "./components/Footer";
 import AnimatedLogo from "./components/AnimatedLogo";
+import Breadcrumb from "./components/Breadcrumb";
 import React, { useState, useEffect } from "react";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex flex-col min-h-screen relative">
         <AnimatedLogo />
         <SideBar />
+        <Breadcrumb />
         <main className="p-4 flex justify-center flex-1 mt-28 relative">
           {children}
         </main>

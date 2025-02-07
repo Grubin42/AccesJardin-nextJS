@@ -15,7 +15,7 @@ export default function CardHome({ title, description, link, backgroundImage, fl
     <Link href={link} className="block">
       <div className="relative rounded overflow-hidden transform transition-transform duration-300 hover:scale-105">
         {/* Fond avec deux images */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0">
           {/* Image de fond aquarelle */}
           <Image
             src={backgroundImage}
@@ -24,7 +24,7 @@ export default function CardHome({ title, description, link, backgroundImage, fl
             className="object-cover opacity-80"
           />
           {/* Image de fleur positionnée à gauche */}
-          <div className="absolute inset-y-0 left-0 w-1/3 pointer-events-none">
+          <div className="absolute inset-y-0 left-0 w-1/3">
             <Image
               src={flowerImage}
               alt="Fleur décorative"

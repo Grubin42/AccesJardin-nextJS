@@ -27,6 +27,16 @@ body {
   font-family: 'Excalifont', 'Patrick Hand', cursive;
 }
 
+.breadcrumb-link {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-size: 0.875rem;
+  color: var(--foreground);
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 .logo-container {
   position: fixed;
   top: 30%;
